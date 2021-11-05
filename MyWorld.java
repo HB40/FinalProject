@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class MyWorld extends World
 {
     static ArrayList<User> userList = new ArrayList<>();;
-    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -32,5 +31,25 @@ public class MyWorld extends World
         
 
         
+    }
+    public static String sortList(){
+        int min;
+        String string = "";
+        for (int i = 0; i<userList.size(); i++){
+            //min = 1000000000000000000000000000000000;
+            for (int z = 0; z<userList.size(); z++){
+                if (userList.get(i).getScore()<userList.get(z).getScore()){
+                    User temp1 = userList.get(i);
+                    userList.set(i, userList.get(z));
+                    userList.set(z, temp1);
+                }
+                
+            }
+        } 
+        for (User user : userList){
+                string = string + user.getName()+"           "+user.getScore()+"\n";
+            
+            }
+        return string;
     }
 }

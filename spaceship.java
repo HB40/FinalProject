@@ -18,6 +18,7 @@ public class spaceship extends Actor
      */
     public spaceship(){
         this.life = true;
+        
     }
     public void act() 
     {

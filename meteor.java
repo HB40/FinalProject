@@ -12,10 +12,12 @@ public class meteor extends Actor
      * Act - do whatever the meteor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public meteor(){turn(180);}
     public void act() 
     {
-        Greenfoot.delay(150);
-        System.out.println("hi");
-        move(5);
+        move(3);
+        if (this.isAtEdge()==true){
+            getWorld().removeObject(this);
+        }
     }    
 }

@@ -11,6 +11,7 @@ public class spaceship extends Actor
 {
     private ArrayList<User> Users;
     private boolean life;
+    private int counter = 0;
     /**
      * Act - do whatever the spaceship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,6 +21,10 @@ public class spaceship extends Actor
     }
     public void act() 
     {
+        if (this.counter>=50){
+            getWorld().addObject(new meteor(), 600, (int)(Math.random()*400));
+            this.counter =0;
+        }
         if(Greenfoot.isKeyDown("w") == true && this.getY() != 0){
            turnTowards(75, 0);
            move(3);
@@ -36,10 +41,11 @@ public class spaceship extends Actor
             
             
         }
-        if(Greenfoot.isKeyDown("x") == true){
-         this.life = false;
         
+        if(Greenfoot.isKeyDown("p") && counter % 5 == 0){
+            getWorld().addObject(new laser(), this.getX(), this.getY());
         }
+        counter++;
     } 
     public boolean getLife(){
         return this.life;

@@ -14,6 +14,15 @@ public class laser extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        move(6);
+        if(this.isTouching(meteor.class)) {
+            this.removeTouching(meteor.class);
+            getWorld().removeObject(this);
+            //ADD ONE TO SCORE
+        } else if (this.isAtEdge() == true){
+            getWorld().removeObject(this);
+        }
+        
+        
     }    
 }

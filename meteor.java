@@ -16,14 +16,19 @@ public class meteor extends Actor
     public meteor(){
       turn(180);
       this.a = false;
+      GreenfootImage myImage = getImage();
+      int newWidth = (int)(myImage.getWidth()/4);
+      int newHeight = (int)(myImage.getHeight()/4);
+      myImage.scale(newWidth, newHeight);
     }
     public void act() 
     {
         move(3);
         if(a == true){
             
-            getWorld().showText("GAME OVER\n"+MyWorld.sortList() , 300, 200);
-            
+            getWorld().showText("GAME OVER\n", 300, 170);
+            getWorld().showText(MyWorld.getNames() , 150, 230);
+            getWorld().showText(MyWorld.getScores() , 450, 230);
             
         }
         if(this.isTouching(spaceship.class)){

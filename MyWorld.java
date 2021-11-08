@@ -52,4 +52,20 @@ public class MyWorld extends World
             }
         return string;
     }
+    public static String getNames(){
+        String string = "";
+        for (User user : userList){
+                string = string + user.getName()+"\n";
+            
+            }
+            return string;
+    }
+    public static String getScores(){
+    String string = "";
+        for (User user : userList){
+                string = string + user.getScore()+"\n";
+            
+            }
+            return string;
+    }
 }

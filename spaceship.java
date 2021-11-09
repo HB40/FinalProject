@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class spaceship extends Actor
 {
+
     private ArrayList<User> Users;
     private boolean life;
     private int counter = 0;
@@ -21,7 +22,7 @@ public class spaceship extends Actor
      */
     public spaceship(){
         this.life = true;
-        
+
     }
     public void act() 
     {
@@ -55,13 +56,20 @@ public class spaceship extends Actor
             getWorld().addObject(new laser(), this.getX(), this.getY());
             this.ammo--;
         }
+        /*if (this.isTouching(meteor.class) != false){
+            meteor.getHealth--;
+        }*/
+        
         counter++;
         getWorld().showText("Score: " +MyWorld.userList.get(MyWorld.userList.size()-1).getScore(), 60, 365);
         getWorld().showText("Ammo: " +this.ammo, 60, 385);
+        getWorld().showText("Health: " +meteor.getHealth(), 60, 345);
         this.prev = MyWorld.userList.get(MyWorld.userList.size()-1).getScore();
+        if (meteor.getHealth()<=0){
+            getWorld().removeObject(this);
+        }
     } 
     public boolean getLife(){
         return this.life;
     }
-    
 }

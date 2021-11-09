@@ -13,6 +13,7 @@ public class meteor extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     boolean a;
+    private static int health = 100;
     public meteor(){
       turn(180);
       this.a = false;
@@ -24,22 +25,21 @@ public class meteor extends Actor
     public void act() 
     {
         move(3);
-        if(a == true){
+        if(a==true){
             
             getWorld().showText("GAME OVER\n", 300, 170);
             getWorld().showText(MyWorld.getNames() , 150, 230);
             getWorld().showText(MyWorld.getScores() , 450, 230);
             
         }
-        if(this.isTouching(spaceship.class)){
-            this.removeTouching(spaceship.class);
-            a = true;
-            
-        }
-         if (this.isAtEdge()==true){
+         if ((this.isAtEdge()==true)||(this.isTouching(spaceship.class))){
+            health--;
             getWorld().removeObject(this);
             
         }
-        
-    }    
+        /*if (this.isTouching(spaceship.class)){
+            getWorld().removeObject(this);
+        }*/
+    }  
+    public static int getHealth(){return health;}
 }

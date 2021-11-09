@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class MyWorld extends World
 {
     static ArrayList<User> userList = new ArrayList<>();;
+    private spaceship ship;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,7 +26,7 @@ public class MyWorld extends World
         String name = Greenfoot.ask("What's up? Please enter your name: ");
         User newuser = new User(name);
         userList.add(newuser);
-        spaceship ship = new spaceship();
+        ship = new spaceship();
         addObject(ship, 75, 200);
         for (User user : userList){System.out.println(user.getName());}
         

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Nov 08 14:47:12 PST 2021
+#Tue Nov 09 13:58:22 PST 2021
 dependency9.type=UsesDependency
 target4.type=ClassTarget
 dependency3.from=spaceship
@@ -51,10 +51,10 @@ dependency6.type=UsesDependency
 target1.type=ClassTarget
 dependency9.to=spaceship
 class.User.superclass=greenfoot.Actor
-editor.swing.0.width=904
-editor.swing.0.y=195
+editor.swing.0.width=905
+editor.swing.0.y=140
 target1.typeParameters=
-editor.swing.0.x=737
+editor.swing.0.x=112
 target2.height=50
 class.meteor.image=meteor3.png
 target5.y=10
